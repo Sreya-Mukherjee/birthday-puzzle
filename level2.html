@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Puzzle 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h2>Puzzle 2</h2>
+    <p>Unscramble the word: <strong>olhev</strong></p>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById("answer").value.toLowerCase();
+      if (answer === "love") {
+        window.location.href = "final.html";
+      } else {
+        document.getElementById("result").innerText = "Not quite... give it another go!";
+      }
+    }
+  </script>
+</body>
+</html>

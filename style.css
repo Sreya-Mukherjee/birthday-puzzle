@@ -1,0 +1,78 @@
+body {
+  background-color: #FFF5F7;
+  font-family: 'Poppins', sans-serif;
+  color: #C13E70;
+  text-align: center;
+  padding: 40px;
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #C13E70;
+}
+
+.container {
+  background-color: #FFE4E1;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #EC6EAD;
+  width: 80%;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+button, .btn {
+  background-color: #EC6EAD;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #C13E70;
+}
+
+/* 💖 Final Page Animation */
+.final-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.5s ease;
+}
+
+.final-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.big-heart {
+  font-size: 60px;
+  animation: pop 1.5s ease forwards;
+  margin-bottom: 20px;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+audio {
+  display: none;
+}

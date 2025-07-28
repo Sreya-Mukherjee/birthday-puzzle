@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Our Treasure Hunt</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <header>
+      <h1>💌 The Love Hunt Begins</h1>
+      <p>A special puzzle made just for you...</p>
+      <button onclick="start()">Start the Hunt</button>
+    </header>
+  </div>
+
+  <script>
+    function start() {
+      window.location.href = "level1.html";
+    }
+  </script>
+</body>
+</html>

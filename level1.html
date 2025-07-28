@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Puzzle 1 – The Love Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h2>💘 Puzzle 1: The Love Quiz 💘</h2>
+    <p id="question-text">Question will appear here...</p>
+    <input type="text" id="user-answer" placeholder="Your answer here...">
+    <button onclick="submitAnswer()">Submit</button>
+    <p id="feedback"></p>
+  </div>
+
+  <script>
+    // 🧩 6 Custom Questions — You Can Customize These!
+    const questions = [
+      {
+        text: "What’s the name of the place we had our first date?",
+        answer: "opposite st.xaviers"
+      },
+      {
+        text: "What did we have on our first date?",
+        answer: "old monk"
+      },
+      {
+        text: "What nickname do you call me that no one else does?",
+        answer: "jinu"
+      },
+      {
+        text: "What food combo did you teach me about during our talking stage?",
+        answer: "momo with mayo"
+      },
+      {
+        text: "Which movie did we watch on our first movie date?",
+        answer: "stree 2"
+      },
+      {
+        text: "What is a song i sent you early in our relationship that you loved?",
+        answer: "apple pie"
+      }
+    ];
+
+    let currentQuestion = 0;
+
+    const questionText = document.getElementById("question-text");
+    const userAnswer = document.getElementById("user-answer");
+    const feedback = document.getElementById("feedback");
+
+    function showQuestion() {
+      questionText.textContent = questions[currentQuestion].text;
+      userAnswer.value = "";
+      feedback.textContent = "";
+    }
+
+    function submitAnswer() {
+      const answer = userAnswer.value.trim().toLowerCase();
+      if (answer === questions[currentQuestion].answer.toLowerCase()) {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+          feedback.textContent = "Correct! 💖 Next one coming up...";
+          setTimeout(showQuestion, 1000);
+        } else {
+          feedback.textContent = "All correct! Moving on... 🎉";
+          setTimeout(() => {
+            window.location.href = "level2.html";
+          }, 1500);
+        }
+      } else {
+        feedback.textContent = "Nope, try again my love 💔";
+      }
+    }
+
+    showQuestion();
+  </script>
+</body>
+</html>
